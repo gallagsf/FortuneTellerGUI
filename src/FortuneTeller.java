@@ -1,11 +1,23 @@
-/**
- * This class handles the Fortune Teller logic
- */
+import java.util.ArrayList;
+
 public class FortuneTeller {
-    // Data
+    public ArrayList<String> fortunes;
 
-    // Constructor
+    public FortuneTeller(ArrayList<String> fortunes) {
+        this.fortunes = fortunes;
+    }
 
-    // methods, namely the getRandomFortune()
+    public FortuneTeller() {
+        this.fortunes = new ArrayList<>();
+        this.fortunes.add("test");
+        this.fortunes.add("test1");
+        this.fortunes.add("test2");
+        this.fortunes.add("test3");
+    }
+
+    public String getRandomFortune(){
+        int random = (int)Math.floor(Math.random() * fortunes.size());
+        return fortunes.get(random);
+    }
 
 }
